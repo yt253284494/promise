@@ -89,7 +89,7 @@ class Promise {
 
   static all(promises) {
     return new Promise((resolve, reject) => {
-      const done = Promise.promiseStatus(1, resolve)
+      const done = Promise.promiseStatus(promises.length, resolve)
       promises.forEach((promise, index) => {
         promise.then(value => {
           done(value, index)
